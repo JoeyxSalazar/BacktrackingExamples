@@ -348,7 +348,7 @@ def showmap(indiv):
     plt.show()
     pass
 
-def south():
+def south_genetic():
     map = Map()
     initMap(map)
     populationSize = 50 # TODO find reasonable value
@@ -383,7 +383,7 @@ def south():
     pass  
 
 
-def all():
+def all_genetic():
     map = Map()
     init51(map)
     populationSize = 275 # TODO find reasonable value
@@ -451,13 +451,13 @@ def fwdbtrack():
 
 
 if __name__ == '__main__':
-    m = input("1: South, 2: All , 3: Backtracking , 4: FWDBacktracking\nEnter: ")
+    m = input("1: South Genetic, 2: All Genetic, 3: Backtracking , 4: FWDBacktracking\nEnter: ")
     if m == '1':
         print("Southern States: ")
-        south()
+        south_genetic()
     elif m == '2':
         print("All States:")
-        all()
+        all_genetic()
     elif m == '3':
         btrack()
     elif m == '4':
