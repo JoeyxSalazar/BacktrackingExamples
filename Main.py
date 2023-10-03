@@ -4,7 +4,9 @@ from Border import Border
 from Individual import Individual
 from Map import Map
 from Population import Population
+from mincon import mc
 from supp import make_lists10, make_lists
+from ac3backtrack import ac3bt
 import networkx as nx
 import matplotlib.pyplot as plt
 
@@ -289,7 +291,6 @@ def init51(map):
     map.borders.append(Border(50, 13))
     pass
 
-
 def initMap(map):
     map.states.append("NC")
     map.states.append("SC")
@@ -382,7 +383,6 @@ def south_genetic():
     showmap(bestIndividual)
     pass  
 
-
 def all_genetic():
     map = Map()
     init51(map)
@@ -417,7 +417,6 @@ def all_genetic():
     showmap(bestIndividual)
     pass  
 
-
 def btrack():
     map = Map()
     initMap(map)
@@ -448,10 +447,42 @@ def fwdbtrack():
     else:
         print("No solution found.")
 
+def ac3btrack():
+    map = Map()
+    initMap(map)
+    map.updateNeighbors()
+    start_individ = Individual(map)
+    start_individ.set_zero()
+    sol = ac3bt(start_individ)
+    result = sol.backtrack()
+    if result == True:
+            print("Solution found:")
+            start_individ.printresult()
+            showmap(start_individ)
+    else:
+        print("No solution found.")
+        start_individ.printresult()
+    pass
 
+def mincons():
+    map = Map()
+    initMap(map)
+    map.updateNeighbors()
+    start_individ = Individual(map)
+    solve = mc(start_individ)
+    if solve.min_conflicts(1000000) == True:
+        print("Solution found:")
+        start_individ.printresult()
+        showmap(start_individ)
+    else:
+        print("No solution found.")
+        start_individ.printresult()
+        showmap(start_individ)
+    pass
 
 if __name__ == '__main__':
-    m = input("1: South Genetic, 2: All Genetic, 3: Backtracking , 4: FWDBacktracking\nEnter: ")
+    m = input("1: South Genetic, 2: All Genetic, 3: Backtracking , 4: FWDBacktracking , 5: AC3Backtrack , 6: Min-Conflicts\nEnter: ")
+    
     if m == '1':
         print("Southern States: ")
         south_genetic()
@@ -459,9 +490,17 @@ if __name__ == '__main__':
         print("All States:")
         all_genetic()
     elif m == '3':
+        print("Backtracking Normal")
         btrack()
     elif m == '4':
+        print("Backtracking w/ FWD Checking")
         fwdbtrack()
+    elif m == '5':
+        print("AC3 Backtracking:")
+        ac3btrack()
+    elif m == '6':
+        print("MinConflicts")
+        mincons()
     else:
         pass
     

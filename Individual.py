@@ -28,6 +28,8 @@ class Individual:
         self.map=map# the map
         self.fitness=0
         self.domains = {}  # Domain for each state (possible color choices)
+        self.variables = [1,2,3,4]
+        self.constraints = [(state_A, state_B) for state_A in self.map.states for state_B in self.map.neighbors[state_A]]
         # TODO some representation of the genome of the individual
         # TODO implement random generation of an individual
         self.random_individual()
