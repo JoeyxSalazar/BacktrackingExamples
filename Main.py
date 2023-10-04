@@ -1,5 +1,5 @@
 import random
-
+import time
 from Border import Border
 from Individual import Individual
 from Map import Map
@@ -417,18 +417,24 @@ def all_genetic():
     showmap(bestIndividual)
     pass  
 
+def print_time(one, two):
+    print("Process took ", two - one, " seconds long")
+
 def btrack():
     map = Map()
     initMap(map)
     map.updateNeighbors()
     start_individ = Individual(map)
     start_individ.set_zero()
+    s = time.time()
     result = start_individ.backtrack()
+    e = time.time()
+    print_time(s, e)
 
     if result == True:
         print("Solution found:")
         start_individ.printresult()
-        showmap(start_individ)
+        #showmap(start_individ)
     else:
         print("No solution found.")
 
@@ -438,12 +444,15 @@ def fwdbtrack():
     map.updateNeighbors()
     start_individ = Individual(map)
     start_individ.set_zero()
+    s = time.time()
     result = start_individ.FWDbacktrack()
+    e = time.time()
+    print_time(s,e)
 
     if result == True:
         print("Solution found:")
         start_individ.printresult()
-        showmap(start_individ)
+        #showmap(start_individ)
     else:
         print("No solution found.")
 
@@ -454,11 +463,14 @@ def ac3btrack():
     start_individ = Individual(map)
     start_individ.set_zero()
     sol = ac3bt(start_individ)
+    s = time.time()
     result = sol.backtrack()
+    e = time.time()
+    print_time(s,e)
     if result == True:
             print("Solution found:")
             start_individ.printresult()
-            showmap(start_individ)
+            #showmap(start_individ)
     else:
         print("No solution found.")
         start_individ.printresult()
@@ -470,18 +482,23 @@ def mincons():
     map.updateNeighbors()
     start_individ = Individual(map)
     solve = mc(start_individ)
-    if solve.min_conflicts(1000000) == True:
+    s = time.time()
+    h = solve.min_conflicts(100000, 200)
+    e = time.time()
+    print_time(s,e)
+    if h == True:
         print("Solution found:")
         start_individ.printresult()
-        showmap(start_individ)
+        #showmap(start_individ)
     else:
         print("No solution found.")
         start_individ.printresult()
-        showmap(start_individ)
+        #showmap(start_individ)
     pass
 
+
 if __name__ == '__main__':
-    m = input("1: South Genetic, 2: All Genetic, 3: Backtracking , 4: FWDBacktracking , 5: AC3Backtrack , 6: Min-Conflicts\nEnter: ")
+    m = input("1: South Genetic, 2: All Genetic, 3: For all backtracks and min-con\nEnter: ")
     
     if m == '1':
         print("Southern States: ")
@@ -492,16 +509,15 @@ if __name__ == '__main__':
     elif m == '3':
         print("Backtracking Normal")
         btrack()
-    elif m == '4':
         print("Backtracking w/ FWD Checking")
-        fwdbtrack()
-    elif m == '5':
+        fwdbtrack()3
         print("AC3 Backtracking:")
         ac3btrack()
-    elif m == '6':
         print("MinConflicts")
         mincons()
     else:
+        print("MinConflicts")
+        mincons()
         pass
     
         

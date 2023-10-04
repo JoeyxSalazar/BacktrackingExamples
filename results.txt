@@ -1,0 +1,292 @@
+Backtracking Normal
+Goal
+Process took  144.2154712677002  seconds long
+Solution found:
+Your result:
+Fitness Rating:  223
+AK :  Green
+AL :  Red
+AR :  Red
+AZ :  Red
+CA :  Blue
+CO :  Blue
+CT :  Red
+DC :  Red
+DE :  Red
+FL :  Blue
+GA :  Yellow
+HI :  Red
+IA :  Red
+ID :  Red
+IL :  Blue
+IN :  Red
+KS :  Red
+KY :  Yellow
+LA :  Yellow
+MA :  Blue
+MD :  Blue
+ME :  Red
+MI :  Blue
+MN :  Yellow
+MO :  Green
+MS :  Green
+MT :  Yellow
+NC :  Red
+ND :  Red
+NE :  Yellow
+NH :  Yellow
+NJ :  Blue
+NM :  Green
+NV :  Green
+NY :  Green
+OH :  Green
+OK :  Yellow
+OR :  Yellow
+PA :  Yellow
+RI :  Yellow
+SC :  Blue
+SD :  Blue
+TN :  Blue
+TX :  Blue
+UT :  Yellow
+VA :  Green
+VT :  Red
+WA :  Blue
+WI :  Green
+WV :  Red
+WY :  Green
+Backtracking w/ FWD Checking
+Goal
+Process took  141.03145241737366  seconds long
+Solution found:
+Your result:
+Fitness Rating:  223
+AK :  Yellow
+AL :  Red
+AR :  Red
+AZ :  Red
+CA :  Blue
+CO :  Blue
+CT :  Red
+DC :  Red
+DE :  Red
+FL :  Blue
+GA :  Yellow
+HI :  Red
+IA :  Red
+ID :  Red
+IL :  Blue
+IN :  Red
+KS :  Red
+KY :  Yellow
+LA :  Yellow
+MA :  Blue
+MD :  Blue
+ME :  Red
+MI :  Blue
+MN :  Yellow
+MO :  Green
+MS :  Green
+MT :  Yellow
+NC :  Red
+ND :  Red
+NE :  Yellow
+NH :  Yellow
+NJ :  Blue
+NM :  Green
+NV :  Green
+NY :  Green
+OH :  Green
+OK :  Yellow
+OR :  Yellow
+PA :  Yellow
+RI :  Yellow
+SC :  Blue
+SD :  Blue
+TN :  Blue
+TX :  Blue
+UT :  Yellow
+VA :  Green
+VT :  Red
+WA :  Blue
+WI :  Green
+WV :  Red
+WY :  Green
+AC3 Backtracking:
+Goal
+Process took  105.69789695739746  seconds long
+Solution found:
+Your result:
+Fitness Rating:  223
+AK :  Red
+AL :  Red
+AR :  Red
+AZ :  Red
+CA :  Blue
+CO :  Blue
+CT :  Red
+DC :  Red
+DE :  Red
+FL :  Blue
+GA :  Yellow
+HI :  Red
+IA :  Red
+ID :  Red
+IL :  Blue
+IN :  Red
+KS :  Red
+KY :  Yellow
+LA :  Yellow
+MA :  Blue
+MD :  Blue
+ME :  Red
+MI :  Blue
+MN :  Yellow
+MO :  Green
+MS :  Green
+MT :  Yellow
+NC :  Red
+ND :  Red
+NE :  Yellow
+NH :  Yellow
+NJ :  Blue
+NM :  Green
+NV :  Green
+NY :  Green
+OH :  Green
+OK :  Yellow
+OR :  Yellow
+PA :  Yellow
+RI :  Yellow
+SC :  Blue
+SD :  Blue
+TN :  Blue
+TX :  Blue
+UT :  Yellow
+VA :  Green
+VT :  Red
+WA :  Blue
+WI :  Green
+WV :  Red
+WY :  Green
+MinConflicts
+Process took  475.4637842178345  seconds long
+No solution found.
+Your result:
+Fitness Rating:  203
+AK :  Red
+AL :  Red
+AR :  Blue
+AZ :  Red
+CA :  Blue
+CO :  Blue
+CT :  Blue
+DC :  Red
+DE :  Green
+FL :  Green
+GA :  Green
+HI :  Yellow
+IA :  Green
+ID :  Blue
+IL :  Red
+IN :  Green
+KS :  Green
+KY :  Red
+LA :  Yellow
+MA :  Green
+MD :  Yellow
+ME :  Blue
+MI :  Red
+MN :  Red
+MO :  Yellow
+MS :  Red
+MT :  Red
+NC :  Yellow
+ND :  Blue
+NE :  Red
+NH :  Green
+NJ :  Red
+NM :  Yellow
+NV :  Yellow
+NY :  Blue
+OH :  Yellow
+OK :  Red
+OR :  Red
+PA :  Green
+RI :  Red
+SC :  Yellow
+SD :  Yellow
+TN :  Blue
+TX :  Blue
+UT :  Green
+VA :  Green
+VT :  Yellow
+WA :  Green
+WI :  Blue
+WV :  Blue
+WY :  Green
+
+Enter: 3
+Backtracking Normal
+Goal
+Process took  0.0  seconds long
+Solution found:
+Your result:
+Fitness Rating:  17
+NC :  Blue
+SC :  Red
+VA :  Red
+TN :  Yellow
+KY :  Blue
+WV :  Yellow
+GA :  Green
+AL :  Red
+MS :  Blue
+FL :  Blue
+Backtracking w/ FWD Checking
+Goal
+Process took  0.0  seconds long
+Solution found:
+Your result:
+Fitness Rating:  17
+NC :  Blue
+SC :  Red
+VA :  Red
+TN :  Yellow
+KY :  Blue
+WV :  Yellow
+GA :  Green
+AL :  Red
+MS :  Blue
+FL :  Blue
+AC3 Backtracking:
+Goal
+Process took  0.001995563507080078  seconds long
+Solution found:
+Your result:
+Fitness Rating:  17
+NC :  Blue
+SC :  Red
+VA :  Red
+TN :  Yellow
+KY :  Blue
+WV :  Yellow
+GA :  Green
+AL :  Red
+MS :  Blue
+FL :  Blue
+MinConflicts
+Process took  1.8550636768341064  seconds long
+Solution found:
+Your result:
+Fitness Rating:  17
+NC :  Yellow
+SC :  Green
+VA :  Red
+TN :  Green
+KY :  Blue
+WV :  Green
+GA :  Blue
+AL :  Red
+MS :  Yellow
+FL :  Yellow

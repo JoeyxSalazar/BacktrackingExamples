@@ -5,7 +5,7 @@ class mc:
         self.i = ind
         pass
 
-    def min_conflicts(self, max_iterations):
+    def min_conflicts(self, max_iterations, num_mutate):
       for j in range(max_iterations):
           conflicts = self.get_conflicts()
           if conflicts == 0:
@@ -14,7 +14,7 @@ class mc:
           value = self.select_value_minimizing_conflicts(variable)
           self.i.genome[variable] = value
           self.i.updateFitness()
-          if j % 200 == 0: #Exit local minima
+          if j % num_mutate == 0: #Exit local minima
               self.i.mutate()
       return False  # No solution found within the max_iterations
 
