@@ -515,7 +515,7 @@ if __name__ == '__main__':
         fwd = 0
         ac3 = 0
         minc = 0
-        for i in range(1, 10):
+        for i in range(1, 11):
             print("Backtracking Normal")
             bt += btrack()
             print("Backtracking w/ FWD Checking")
@@ -525,10 +525,10 @@ if __name__ == '__main__':
             print("MinConflicts")
             minc += mincons(1000000, 200)
         print("\nAverage Times (run 10 Times):")
-        print("Backtrack: ", bt/5)
-        print("Backtrack w/ Forward: ", fwd/5)
-        print("Backtrack w/ AC3: ", ac3/5)
-        print("Min-Conflicts: ", minc/5)
+        print("Backtrack: ", bt/10)
+        print("Backtrack w/ Forward: ", fwd/10)
+        print("Backtrack w/ AC3: ", ac3/10)
+        print("Min-Conflicts: ", minc/10)
     else:
         print("MinConflicts")
         mincons(1000000, 200)
