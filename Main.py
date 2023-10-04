@@ -481,7 +481,7 @@ def ac3btrack():
 
 def mincons(i, m):
     map = Map()
-    init51(map)
+    initMap(map)
     map.updateNeighbors()
     start_individ = Individual(map)
     solve = mc(start_individ)
