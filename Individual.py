@@ -86,7 +86,7 @@ class Individual:
 
         for color in self.domains[state]:
             if self.isColorValid(state, color):
-                self.genome[state] = color  # Assign a valid color to the state
+                self.genome[state] = color  
                 self.updateDomains()
                 self.updateFitness()
 
@@ -94,7 +94,7 @@ class Individual:
                     if self.backtrack():  # Recursively backtrack
                         return True
 
-                self.genome[state] = 0  # Backtrack by resetting the color to 0 (unassigned)
+                self.genome[state] = 0  # Backtrack by resetting 
                 self.updateDomains()
 
         return False

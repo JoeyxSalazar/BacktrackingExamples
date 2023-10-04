@@ -435,6 +435,7 @@ def btrack():
         print("Solution found:")
         start_individ.printresult()
         #showmap(start_individ)
+        return e-s
     else:
         print("No solution found.")
 
@@ -452,6 +453,7 @@ def fwdbtrack():
     if result == True:
         print("Solution found:")
         start_individ.printresult()
+        return e-s
         #showmap(start_individ)
     else:
         print("No solution found.")
@@ -470,25 +472,27 @@ def ac3btrack():
     if result == True:
             print("Solution found:")
             start_individ.printresult()
+            return e-s
             #showmap(start_individ)
     else:
         print("No solution found.")
         start_individ.printresult()
     pass
 
-def mincons():
+def mincons(i, m):
     map = Map()
-    initMap(map)
+    init51(map)
     map.updateNeighbors()
     start_individ = Individual(map)
     solve = mc(start_individ)
     s = time.time()
-    h = solve.min_conflicts(100000, 200)
+    h = solve.min_conflicts(i, m)
     e = time.time()
     print_time(s,e)
     if h == True:
         print("Solution found:")
         start_individ.printresult()
+        return e-s
         #showmap(start_individ)
     else:
         print("No solution found.")
@@ -507,17 +511,27 @@ if __name__ == '__main__':
         print("All States:")
         all_genetic()
     elif m == '3':
-        print("Backtracking Normal")
-        btrack()
-        print("Backtracking w/ FWD Checking")
-        fwdbtrack()3
-        print("AC3 Backtracking:")
-        ac3btrack()
-        print("MinConflicts")
-        mincons()
+        bt = 0
+        fwd = 0
+        ac3 = 0
+        minc = 0
+        for i in range(1, 10):
+            print("Backtracking Normal")
+            bt += btrack()
+            print("Backtracking w/ FWD Checking")
+            fwd += fwdbtrack()
+            print("AC3 Backtracking:")
+            ac3 += ac3btrack()
+            print("MinConflicts")
+            minc += mincons(1000000, 200)
+        print("\nAverage Times (run 10 Times):")
+        print("Backtrack: ", bt/5)
+        print("Backtrack w/ Forward: ", fwd/5)
+        print("Backtrack w/ AC3: ", ac3/5)
+        print("Min-Conflicts: ", minc/5)
     else:
         print("MinConflicts")
-        mincons()
+        mincons(1000000, 200)
         pass
     
         

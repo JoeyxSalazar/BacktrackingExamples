@@ -38,16 +38,14 @@ class mc:
         return False
 
     def select_variable_with_conflicts(self, conflicts):
-        # Select a variable (region) with conflicts randomly.
         conflicted_variables = [state for state in self.i.map.states if self.has_conflicts(state)]
         return random.choice(conflicted_variables)
 
     def select_value_minimizing_conflicts(self, variable):
         current_color = self.i.genome[variable]
         neighbor_colors = set(self.i.genome[state] for state in self.i.map.neighbors[variable])
-        #neighbor_colors.discard(current_color)
+        neighbor_colors.discard(current_color)
 
-        # Initialize variables to track the best color and its conflicts
         best_color = current_color
         best_conflicts = self.get_conflicts()
 
@@ -55,12 +53,12 @@ class mc:
             self.i.genome[variable] = color
             conflicts = self.get_conflicts()
 
-            # If this color reduces conflicts, update the best_color and best_conflicts
+            # update best
             if conflicts < best_conflicts:
                 best_color = color
                 best_conflicts = conflicts
 
-        # Restore the original color.
+        # Restore
         self.i.genome[variable] = current_color
         return best_color
  

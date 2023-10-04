@@ -16,7 +16,7 @@ class ac3bt:
                 for neighbor in self.i.map.neighbors[state_X]:
                     if neighbor != state_Y:
                         queue.append((neighbor, state_X))
-        return True  # AC-3 succeeded; the domains are consistent
+        return True  # domains are consistent
 
     def revise(self, state_X, state_Y):
         revised = False
@@ -33,7 +33,7 @@ class ac3bt:
 
         state = self.i.selectUnassignedState()
         if state is None:
-                return True # All states are assigned colors
+                return True # All states are assigned 
 
         for color in self.i.domains[state]:
             if self.i.isColorValid(state, color):
@@ -42,7 +42,7 @@ class ac3bt:
                 self.i.updateDomains()
                 self.i.updateFitness()
 
-                if self.ac3():  # Apply AC-3 for constraint propagation
+                if self.ac3():  
                     if self.backtrack():  # Recursively backtrack
                         return True
 
